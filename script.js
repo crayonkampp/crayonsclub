@@ -1,6 +1,6 @@
 // Chess.com API endpoint
 const CHESS_COM_API = 'https://api.chess.com/pub/user';
-const USERNAME = 'crayonkampp'; // Change this to your Chess.com username
+const USERNAME = 'crayon'; // Change this to your Chess.com username
 
 // Fetch user profile data from Chess.com API
 async function loadChessProfile() {
