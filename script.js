@@ -1,6 +1,18 @@
 // Chess.com API endpoint
 const CHESS_COM_API = 'https://api.chess.com/pub/user';
-const USERNAME = 'crayon'; // Change this to your Chess.com username
+
+// Get username from URL parameter, localStorage, or default
+function getUsername() {
+    const params = new URLSearchParams(window.location.search);
+    const urlUsername = params.get('user');
+    if (urlUsername) {
+        localStorage.setItem('chessUsername', urlUsername);
+        return urlUsername;
+    }
+    return localStorage.getItem('chessUsername') || 'crayon';
+}
+
+let USERNAME = getUsername();
 
 // Fetch user profile data from Chess.com API
 async function loadChessProfile() {
@@ -10,7 +22,7 @@ async function loadChessProfile() {
         
         if (!response.ok) {
             console.error('Failed to fetch Chess.com profile');
-            document.getElementById('profileName').textContent = 'User not found';
+            showError('User not found. Check the username and try again.');
             return;
         }
 
@@ -32,22 +44,38 @@ async function loadChessProfile() {
             document.getElementById('profilePic').src = `https://www.gravatar.com/avatar/${data.id}?s=200&d=identicon`;
         }
 
+        // Clear any error message
+        clearError();
+
         // Log the full data for reference
         console.log('Chess.com Profile Data:', data);
     } catch (error) {
         console.error('Error loading Chess.com profile:', error);
-        document.getElementById('profileName').textContent = 'Error loading profile';
+        showError('Error loading profile. Please try again later.');
     }
+}
+
+// Show error message
+function showError(message) {
+    const profileNameElement = document.getElementById('profileName');
+    profileNameElement.textContent = message;
+    profileNameElement.style.color = 'red';
+}
+
+// Clear error message
+function clearError() {
+    const profileNameElement = document.getElementById('profileName');
+    profileNameElement.style.color = '';
 }
 
 // Set up button click handlers
 function setupButtons() {
     const buttons = document.querySelectorAll('.nav-button');
     
-    buttons.forEach((button, index) => {
+    buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            const buttonText = button.querySelector('.button-text').textContent;
+            const buttonText = button.querySelector('.button-text')?.textContent?.trim() || '';
             
             // Define actions for each button
             const actions = {
@@ -55,15 +83,27 @@ function setupButtons() {
                 'Stats': () => window.open(`https://www.chess.com/stats/live/${USERNAME}`, '_blank'),
                 'Puzzles': () => window.open(`https://www.chess.com/puzzles`, '_blank'),
                 'Followers': () => window.open(`https://www.chess.com/member/${USERNAME}/followers`, '_blank'),
-                'Settings': () => alert('Settings not implemented yet'),
+                'Settings': () => handleSettings(),
             };
 
             // Execute the corresponding action
             if (actions[buttonText]) {
                 actions[buttonText]();
+            } else {
+                console.warn(`No action defined for button: "${buttonText}"`);
             }
         });
     });
+}
+
+// Handle settings action
+function handleSettings() {
+    const newUsername = prompt('Enter Chess.com username:', USERNAME);
+    if (newUsername && newUsername.trim()) {
+        USERNAME = newUsername.trim();
+        localStorage.setItem('chessUsername', USERNAME);
+        loadChessProfile();
+    }
 }
 
 // Initialize when DOM is ready
