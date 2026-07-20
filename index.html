@@ -3,25 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viltrum Empire Sidebar</title>
+
+<title>Crayon Club Sidebar</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-body{
+html, body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
     background:transparent;
+    overflow:hidden;
 }
 
-/* Sidebar */
+/* Main Sidebar */
 
 .sidebar{
-    width:260px;
-    background:linear-gradient(180deg,#240000,#120000);
+    width:100%;
+    min-height:100%;
+    background:linear-gradient(180deg,#240000,#100000);
     border:2px solid #7b0000;
     border-radius:16px;
     overflow:hidden;
@@ -30,18 +37,19 @@ body{
         inset 0 0 20px rgba(255,0,0,.08);
 }
 
+
 /* Profile */
 
 .profile{
     text-align:center;
-    padding:28px 18px;
+    padding:22px 15px;
     background:linear-gradient(180deg,#420000,#1a0000);
     border-bottom:2px solid #7b0000;
 }
 
 .profile img{
-    width:110px;
-    height:110px;
+    width:95px;
+    height:95px;
     border-radius:50%;
     border:4px solid #a00000;
     transition:.35s;
@@ -52,39 +60,46 @@ body{
     box-shadow:0 0 18px rgba(255,40,40,.75);
 }
 
+
 .profile h2{
-    margin-top:16px;
-    font-size:24px;
-    color:#fff;
+    margin-top:12px;
+    color:#ffffff;
+    font-size:23px;
     letter-spacing:1px;
 }
 
+
 .profile a{
-    text-decoration:none;
     color:#ff5d5d;
+    text-decoration:none;
     font-size:14px;
     transition:.3s;
 }
 
+
 .profile a:hover{
-    color:#ffffff;
+    color:white;
 }
+
 
 /* Buttons */
 
 .menu{
-    padding:20px;
+    padding:15px;
 }
+
 
 .menu a{
     display:block;
-    text-decoration:none;
-    margin-bottom:15px;
-    padding:14px;
+    padding:13px;
+    margin-bottom:12px;
+
     text-align:center;
+    text-decoration:none;
 
     background:linear-gradient(180deg,#850000,#520000);
-    color:#fff;
+
+    color:white;
 
     border:1px solid #b50000;
     border-radius:12px;
@@ -95,13 +110,17 @@ body{
     transition:.25s;
 }
 
+
 .menu a:hover{
     transform:translateY(-3px) scale(1.03);
+
     background:linear-gradient(180deg,#c00000,#780000);
+
     box-shadow:
         0 0 18px rgba(255,0,0,.55),
         inset 0 0 8px rgba(255,255,255,.12);
 }
+
 </style>
 
 </head>
@@ -113,7 +132,7 @@ body{
     <div class="profile">
 
         <a href="https://www.chess.com/member/crayon" target="_blank">
-            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg" alt="Profile">
+            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg">
         </a>
 
         <h2>crayon</h2>
@@ -123,6 +142,7 @@ body{
         </a>
 
     </div>
+
 
     <div class="menu">
 
@@ -134,9 +154,5 @@ body{
 
 </div>
 
-</body>
-</html>
-
-    <script src="script.js"></script>
 </body>
 </html>
