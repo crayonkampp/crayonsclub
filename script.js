@@ -1,5 +1,5 @@
-// Chess.com API endpoint
-const CHESS_COM_API = 'https://api.chess.com/pub/user';
+// Backend API endpoint (instead of direct Chess.com API)
+const API_ENDPOINT = 'http://localhost:3000/api/chess-profile';
 
 // Get username from URL parameter, localStorage, or default
 function getUsername() {
@@ -14,11 +14,11 @@ function getUsername() {
 
 let USERNAME = getUsername();
 
-// Fetch user profile data from Chess.com API
+// Fetch user profile data from backend
 async function loadChessProfile() {
     try {
-        // Get basic user info
-        const response = await fetch(`${CHESS_COM_API}/${USERNAME}`);
+        // Get basic user info from our backend
+        const response = await fetch(`${API_ENDPOINT}/${USERNAME}`);
         
         if (!response.ok) {
             console.error('Failed to fetch Chess.com profile');
