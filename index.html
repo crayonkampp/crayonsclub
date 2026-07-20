@@ -1,152 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Club - Chess.com Profile</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viltrum Empire Sidebar</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
+body{
+    background:transparent;
+}
 
-        .profile-header {
-            margin-bottom: 30px;
-        }
+/* Sidebar */
 
-        #profilePic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 4px solid #667eea;
-            object-fit: cover;
-        }
+.sidebar{
+    width:260px;
+    background:linear-gradient(180deg,#240000,#120000);
+    border:2px solid #7b0000;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+        0 0 25px rgba(170,0,0,.45),
+        inset 0 0 20px rgba(255,0,0,.08);
+}
 
-        #profileName {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
+/* Profile */
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 10px;
-        }
+.profile{
+    text-align:center;
+    padding:28px 18px;
+    background:linear-gradient(180deg,#420000,#1a0000);
+    border-bottom:2px solid #7b0000;
+}
 
-        .stat-item {
-            text-align: center;
-        }
+.profile img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:4px solid #a00000;
+    transition:.35s;
+}
 
-        .stat-label {
-            font-size: 12px;
-            color: #777;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
+.profile img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 18px rgba(255,40,40,.75);
+}
 
-        #viewCount {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
-        }
+.profile h2{
+    margin-top:16px;
+    font-size:24px;
+    color:#fff;
+    letter-spacing:1px;
+}
 
-        .nav-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
-        }
+.profile a{
+    text-decoration:none;
+    color:#ff5d5d;
+    font-size:14px;
+    transition:.3s;
+}
 
-        .nav-button {
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: #667eea;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+.profile a:hover{
+    color:#ffffff;
+}
 
-        .nav-button:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+/* Buttons */
 
-        .button-text {
-            display: block;
-        }
+.menu{
+    padding:20px;
+}
 
-        .error-message {
-            color: red;
-            padding: 10px;
-            background: #ffe0e0;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-    </style>
+.menu a{
+    display:block;
+    text-decoration:none;
+    margin-bottom:15px;
+    padding:14px;
+    text-align:center;
+
+    background:linear-gradient(180deg,#850000,#520000);
+    color:#fff;
+
+    border:1px solid #b50000;
+    border-radius:12px;
+
+    font-weight:bold;
+    letter-spacing:.8px;
+
+    transition:.25s;
+}
+
+.menu a:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:linear-gradient(180deg,#c00000,#780000);
+    box-shadow:
+        0 0 18px rgba(255,0,0,.55),
+        inset 0 0 8px rgba(255,255,255,.12);
+}
+</style>
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="profile-header">
-            <img id="profilePic" src="" alt="Profile Picture">
-            <h1 id="profileName">Loading...</h1>
-        </div>
 
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-label">Followers</div>
-                <div id="viewCount">0</div>
-            </div>
-        </div>
+<div class="sidebar">
 
-        <div class="nav-buttons">
-            <button class="nav-button">
-                <span class="button-text">Play</span>
-            </button>
-            <button class="nav-button">
-                <span class="button-text">Stats</span>
-            </button>
-            <button class="nav-button">
-                <span class="button-text">Puzzles</span>
-            </button>
-            <button class="nav-button">
-                <span class="button-text">Followers</span>
-            </button>
-            <button class="nav-button">
-                <span class="button-text">Settings</span>
-            </button>
-        </div>
+    <div class="profile">
+
+        <a href="https://www.chess.com/member/crayon" target="_blank">
+            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg" alt="Profile">
+        </a>
+
+        <h2>crayon</h2>
+
+        <a href="https://www.chess.com/member/crayon" target="_blank">
+            View Profile
+        </a>
+
     </div>
+
+    <div class="menu">
+
+        <a href="https://www.chess.com/clubs/forum/view/rules-version-2-0" target="_blank">
+            📜 Rules
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
