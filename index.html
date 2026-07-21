@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Crayon Club Sidebar</title>
+<title>Crayon's Club Sidebar</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -19,11 +20,11 @@ html, body{
     height:100%;
     margin:0;
     padding:0;
-    background:transparent;
+    background:#100000;
     overflow:hidden;
 }
 
-/* Main Sidebar */
+/* Sidebar */
 
 .sidebar{
     width:100%;
@@ -36,7 +37,6 @@ html, body{
         0 0 25px rgba(170,0,0,.45),
         inset 0 0 20px rgba(255,0,0,.08);
 }
-
 
 /* Profile */
 
@@ -60,14 +60,12 @@ html, body{
     box-shadow:0 0 18px rgba(255,40,40,.75);
 }
 
-
 .profile h2{
     margin-top:12px;
-    color:#ffffff;
+    color:#fff;
     font-size:23px;
     letter-spacing:1px;
 }
-
 
 .profile a{
     color:#ff5d5d;
@@ -76,11 +74,9 @@ html, body{
     transition:.3s;
 }
 
-
 .profile a:hover{
-    color:white;
+    color:#fff;
 }
-
 
 /* Buttons */
 
@@ -88,37 +84,35 @@ html, body{
     padding:15px;
 }
 
-
 .menu a{
     display:block;
     padding:13px;
     margin-bottom:12px;
-
     text-align:center;
     text-decoration:none;
-
     background:linear-gradient(180deg,#850000,#520000);
-
-    color:white;
-
+    color:#fff;
     border:1px solid #b50000;
     border-radius:12px;
-
     font-weight:bold;
     letter-spacing:.8px;
-
     transition:.25s;
 }
 
-
 .menu a:hover{
     transform:translateY(-3px) scale(1.03);
-
     background:linear-gradient(180deg,#c00000,#780000);
-
     box-shadow:
         0 0 18px rgba(255,0,0,.55),
         inset 0 0 8px rgba(255,255,255,.12);
+}
+
+.footer{
+    padding:12px;
+    text-align:center;
+    font-size:11px;
+    color:#8f8f8f;
+    border-top:1px solid #4b0000;
 }
 
 </style>
@@ -132,7 +126,7 @@ html, body{
     <div class="profile">
 
         <a href="https://www.chess.com/member/crayon" target="_blank">
-            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg">
+            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg" alt="Crayon">
         </a>
 
         <h2>crayon</h2>
@@ -143,13 +137,20 @@ html, body{
 
     </div>
 
-
     <div class="menu">
 
         <a href="https://www.chess.com/clubs/forum/view/rules-version-2-0" target="_blank">
-            📜 Rules
+            Rules
         </a>
 
+        <a href="https://discord.gg/Wqkfb5PfD" target="_blank">
+            Discord
+        </a>
+
+    </div>
+
+    <div class="footer">
+        Crayon's Club
     </div>
 
 </div>
