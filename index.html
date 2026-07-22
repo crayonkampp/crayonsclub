@@ -15,11 +15,9 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html, body{
+html,body{
     width:100%;
     height:100%;
-    margin:0;
-    padding:0;
     background:#100000;
     overflow:hidden;
 }
@@ -38,7 +36,7 @@ html, body{
         inset 0 0 20px rgba(255,0,0,.08);
 }
 
-/* Profile */
+/* Owner */
 
 .profile{
     text-align:center;
@@ -64,38 +62,85 @@ html, body{
     margin-top:12px;
     color:#fff;
     font-size:23px;
-    letter-spacing:1px;
 }
 
 .profile a{
     color:#ff5d5d;
     text-decoration:none;
-    font-size:14px;
-    transition:.3s;
 }
 
 .profile a:hover{
     color:#fff;
 }
 
+/* Member Cards */
+
+.featured{
+    margin:18px;
+    padding:15px;
+    text-align:center;
+    background:linear-gradient(180deg,#2d0000,#180000);
+    border:1px solid #7b0000;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.featured:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 0 18px rgba(255,0,0,.55);
+}
+
+.featured h3{
+    color:#ff5555;
+    margin-bottom:12px;
+    letter-spacing:1px;
+}
+
+.featured img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #a00000;
+    transition:.3s;
+}
+
+.featured img:hover{
+    transform:scale(1.08);
+}
+
+.featured .name{
+    color:white;
+    margin-top:10px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.featured .link{
+    color:#ff6666;
+    text-decoration:none;
+}
+
+.featured .link:hover{
+    color:white;
+}
+
 /* Buttons */
 
 .menu{
-    padding:15px;
+    padding:0 15px 15px;
 }
 
 .menu a{
     display:block;
+    text-align:center;
     padding:13px;
     margin-bottom:12px;
-    text-align:center;
     text-decoration:none;
+    color:white;
     background:linear-gradient(180deg,#850000,#520000);
-    color:#fff;
     border:1px solid #b50000;
     border-radius:12px;
     font-weight:bold;
-    letter-spacing:.8px;
     transition:.25s;
 }
 
@@ -108,50 +153,88 @@ html, body{
 }
 
 .footer{
-    padding:12px;
     text-align:center;
+    padding:12px;
+    color:#888;
     font-size:11px;
-    color:#8f8f8f;
     border-top:1px solid #4b0000;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="sidebar">
 
-    <div class="profile">
+<div class="profile">
 
-        <a href="https://www.chess.com/member/crayon" target="_blank">
-            <img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg" alt="Crayon">
-        </a>
+<a href="https://www.chess.com/member/crayon" target="_blank">
+<img src="https://images.chesscomfiles.com/uploads/v1/user/240765061.4d0c5217.200x200o.00458b37a56d.jpg">
+</a>
 
-        <h2>crayon</h2>
+<h2>crayon</h2>
 
-        <a href="https://www.chess.com/member/crayon" target="_blank">
-            View Profile
-        </a>
+<a href="https://www.chess.com/member/crayon" target="_blank">
+View Profile
+</a>
 
-    </div>
+</div>
 
-    <div class="menu">
 
-        <a href="https://www.chess.com/clubs/forum/view/rules-version-2-0" target="_blank">
-            Rules
-        </a>
+<div class="featured">
 
-        <a href="https://discord.gg/Wqkfb5PfD" target="_blank">
-            Discord
-        </a>
+<h3>Featured Member</h3>
 
-    </div>
+<a href="https://www.chess.com/member/gloggleogglemer" target="_blank">
+<img src="https://images.chesscomfiles.com/uploads/v1/user/505460223.87d71746.160x160o.5677bda051fe@2x.jpg">
+</a>
 
-    <div class="footer">
-        Crayon's Club
-    </div>
+<div class="name">
+gloggleogglemer
+</div>
+
+<a class="link" href="https://www.chess.com/member/gloggleogglemer" target="_blank">
+View Profile
+</a>
+
+</div>
+
+
+<div class="featured">
+
+<h3>Featured Member</h3>
+
+<a href="https://www.chess.com/member/cello_jello" target="_blank">
+<img src="https://images.chesscomfiles.com/uploads/v1/user/349443015.24f8fe7c.160x160o.bed1039a8a71@2x.jpg">
+</a>
+
+<div class="name">
+cello_jello
+</div>
+
+<a class="link" href="https://www.chess.com/member/cello_jello" target="_blank">
+View Profile
+</a>
+
+</div>
+
+
+<div class="menu">
+
+<a href="https://www.chess.com/clubs/forum/view/rules-version-2-0" target="_blank">
+Rules
+</a>
+
+<a href="https://discord.gg/Wqkfb5PfD" target="_blank">
+Discord
+</a>
+
+</div>
+
+<div class="footer">
+Crayon's Club
+</div>
 
 </div>
 
